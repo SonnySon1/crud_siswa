@@ -1,5 +1,5 @@
 @extends('siswa.layouts.master')
-@section('master')
+@section('content')
     <h1>Tambah Data Siswa</h1>
     <a href="/">Kembali</a>
     <form action="" method="post">
