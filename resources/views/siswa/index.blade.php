@@ -11,19 +11,15 @@
             <td>Kelas</td>
             <td>Jurusan</td>
         </tr>
-        <tr>
-            <td>1</td>
-            <td>Alex</td>
-            <td>111 1222 222</td>
-            <td>2A</td>
-            <td>Software Engineering</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>Michael</td>
-            <td>111 1222 333</td>
-            <td>3A</td>
-            <td>Software Engineering</td>
-        </tr>
+        @foreach ($siswas as $index => $siswa)
+            <tr>
+                <td>{{ $index + 1 }}</td>
+                <td>{{ $siswa->nama }}</td>
+                <td>{{ $siswa->nis }}</td>
+                <td>{{ $siswa->kelas }}</td>
+                <td>{{ $siswa->jurusan->nama_jurusan }}</td>
+            </tr>
+        @endforeach
+        
     </table>
 @endsection
