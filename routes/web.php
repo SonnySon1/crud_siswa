@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use App\Models\User;
+use App\Models\Jurusan;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,11 +17,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    $siswas = User::all();
-    return view('siswa.index', compact('siswas'));
-});
-
-Route::get('/tambah', function () {
-    return view('siswa.create');
-});
+Route::get('/', [UserController::class, 'index']);
+Route::get('/tambah', [UserController::class, 'create']);
+Route::post('/store', [UserController::class, 'store']);

@@ -2,25 +2,35 @@
 @section('content')
     <h1>Tambah Data Siswa</h1>
     <a href="/">Kembali</a>
-    <form action="" method="post">
+    <form action="/store" method="post">
+        @csrf
         <div class="mb-3">
             <label for="">Nama</label>
-            <input type="text" class="form-control" placeholder="Nama" aria-label="Username" aria-describedby="basic-addon1">
+            <input name="name" type="text" class="form-control" placeholder="Nama" aria-label="Username" aria-describedby="basic-addon1">
         </div>          
         <div class="mb-3">
             <label for="">Nis</label>
-            <input type="text" class="form-control" placeholder="Nis" aria-label="Username" aria-describedby="basic-addon1">
+            <input name="nis" type="text" class="form-control" placeholder="Nis" aria-label="Username" aria-describedby="basic-addon1">
         </div>          
         <div class="mb-3">
             <label for="">Kelas</label>
-            <input type="text" class="form-control" placeholder="Kelas" aria-label="Username" aria-describedby="basic-addon1">
+            <input name="kelas" type="text" class="form-control" placeholder="Kelas" aria-label="Username" aria-describedby="basic-addon1">
         </div>          
         <div class="mb-3">
             <label for="">Jurusan</label>
-            <input type="text" class="form-control" placeholder="Jurusan" aria-label="Username" aria-describedby="basic-addon1">
+            <select name="jurusan_id" class="form-select" aria-label="Default select example">
+                <option selected>--Pilih Jurusan--</option>
+                @foreach ($jurusans as $jurusan)
+                    <option value="{{ $jurusan->id }}">{{ $jurusan->nama_jurusan }}</option>
+                @endforeach
+              </select>
+        </div>          
+        <div class="mb-3">
+            <label for="">Password</label>
+            <input name="password" type="text" class="form-control" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1">
         </div>          
         <div>
-            <button>Tambah</button>
+            <button type="submit">Tambah</button>
         </div>
     </form>
 @endsection
