@@ -2,7 +2,7 @@
 @section('content')
     <h1>Tambah Data Siswa</h1>
     <a href="/">Kembali</a>
-    <form action="/store" method="post">
+    <form action="/store" method="post" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
             <label for="">Nama</label>
@@ -37,13 +37,20 @@
                     <p class="text-danger">{{ $message }}</p>
                 @enderror
         </div>          
-        <div class="mb-3 d-block">
+        <div class="mb-3">
             <label for="">Password</label>
             <input  name="password" value="{{ old('password') }}"  type="text" class="form-control " placeholder="Password" aria-label="Username" aria-describedby="basic-addon1">
             @error('password')
                 <p class="text-danger">{{ $message }}</p>
             @enderror
         </div>          
+        <div class="mb-3">
+            <label for="">Foto</label>
+            <input  name="foto" type="file" class="form-control">
+            @error('foto')
+                <p class="text-danger">{{ $message }}</p>
+            @enderror
+        </div>
         <div>
             <button type="submit">Tambah</button>
         </div>
