@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use App\Models\User;
 use App\Models\Jurusan;
@@ -16,6 +17,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+// register
+Route::get('/register', [AuthController::class, 'register']);
+Route::post('/register/store', [AuthController::class, 'storeRegister']);
 
 Route::get('/', [UserController::class, 'index']);
 Route::get('/tambah', [UserController::class, 'create']);
