@@ -42,7 +42,30 @@ class AuthController extends Controller
         ];
 
         User::create($storeDataSiswa);
-        return 'registrasi berhasil';
-        // return redirect('/register');
+        return redirect('/login');
+    }
+
+
+
+    // login
+    public function login() {
+        return view('auth.login');
+    }
+
+
+
+
+
+    public function storeLogin(Request $request) {        
+        $credentials = $request->validate([
+            'nis' => 'required',
+            'password' => 'required'
+        ]);
+
+        if (auth()->attempt($credentials)) {
+                return redirect('/');
+        } else {
+            return redirect('/login')->with('error', 'nis / password salah');
+        }
     }
 }

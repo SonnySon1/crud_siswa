@@ -22,6 +22,21 @@ use Illuminate\Support\Facades\Route;
 Route::get('/register', [AuthController::class, 'register']);
 Route::post('/register/store', [AuthController::class, 'storeRegister']);
 
+
+
+// login
+Route::get('/login', [AuthController::class, 'login']);
+Route::post('/login/store', [AuthController::class, 'storeLogin']);
+
+
+
+
+
+
+
+
+
+
 Route::get('/', [UserController::class, 'index']);
 Route::get('/tambah', [UserController::class, 'create']);
 Route::post('/store', [UserController::class, 'store']);
