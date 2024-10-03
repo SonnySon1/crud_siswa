@@ -2,7 +2,10 @@
 
 @section('content')
     <h1>List Halaman Siswa</h1>
-    <a href="/tambah" class="btn btn-primary mb-3">Tambah Siswa</a>
+    <div class="mb-3">
+        <a href="/tambah" class="btn btn-primary">Tambah Siswa</a>
+        <a href="/logout" class="btn btn-danger">Logout</a>
+    </div>
     <div class="card">
         <table  class="table table-striped">    
             <tr>
