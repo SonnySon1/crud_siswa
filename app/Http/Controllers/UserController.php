@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Jurusan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -130,5 +131,10 @@ class UserController extends Controller
         // cari data berdasarkan id yang di kirim dan lakukan update
         $dataUser = User::find($id)->update($updateDataSiswa);
         return redirect('/');
+    }
+
+
+    public function profile() {
+        return view('siswa.profile');
     }
 }

@@ -2,8 +2,10 @@
 
 @section('content')
     <h1>List Halaman Siswa</h1>
+    <h5>Hello {{ Auth::user()->nama }}</h5>
     <div class="mb-3">
         <a href="/tambah" class="btn btn-primary">Tambah Siswa</a>
+        <a href="/profile" class="btn btn-success">Profile Saya</a>
         <a href="/logout" class="btn btn-danger">Logout</a>
     </div>
     <div class="card">

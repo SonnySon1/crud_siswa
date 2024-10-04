@@ -39,6 +39,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/destroy/{user}', [UserController::class, 'destroy']);
     Route::get('/edit/{id}', [UserController::class, 'edit']);
     Route::post('/update/{id}', [UserController::class, 'update']);
+    Route::get('/profile', [UserController::class, 'profile']);
 
 
     // logout
